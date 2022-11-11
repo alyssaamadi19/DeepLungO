@@ -5,7 +5,7 @@ from PIL import Image
 
 # Funciones en archivos .py fuera del folder de pages. Tendras que cambiarlo para tu compu
 import sys
-sys.path.insert(1, 'C:/Users/PIEROL/Desktop/DeepLearningOp/Streamlit') 
+sys.path.insert(1, 'C:/Users/alyssa/OneDrive/Escritorio/DeepLungO/Streamlit') 
 import CAD_DLOv1 as cad
 import database as D
 
