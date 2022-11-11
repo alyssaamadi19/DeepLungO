@@ -43,7 +43,7 @@ if sel is not '-':
     im = D.get_radiog(id)/255.
     #st.image(im)
 
-    model_path = 'Xception.h5'
+    model_path = 'weights.h5'
     pred, gradcam = cad.DLO_predict(im*255., model_path)
     
     st.markdown("""
