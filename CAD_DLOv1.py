@@ -131,7 +131,7 @@ def Model_predict(model_path, im, img, orig_size, val_pad):
     pooling='max',
     classes=1,
     classifier_activation="sigmoid")
-  model.load_weights('weights.h5') #Cargamos los pesos
+  model.load_weights(model_path) #Cargamos los pesos
   pred = model.predict(im, verbose = 0)
   pred = np.round(float(pred),3)*100
 
