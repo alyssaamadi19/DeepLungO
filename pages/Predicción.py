@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_image_comparison import image_comparison
 import numpy as np
 from PIL import Image
+import gdown
 
 # Funciones en archivos .py fuera del folder de pages. Tendras que cambiarlo para tu compu
 import sys
@@ -42,7 +43,15 @@ if sel is not '-':
     # Obtenemos la imagen del Drive
     im = D.get_radiog(id)/255.
     #st.image(im)
-
+    
+    #id= 1jUUB_5C2WHuKD-x_dQgh5-1fD2lPyWoS
+    @st.experimental_memo
+    def dowload_data():
+        url = "https://drive.google.com/uc?id=1jUUB_5C2WHuKD-x_dQgh5-1fD2lPyWoS";
+        output = 'weights.h5';
+        gdown.download(url, output, quite=False);
+    download_data()
+    
     model_path = 'weights.h5'
     pred, gradcam = cad.DLO_predict(im*255., model_path)
     
