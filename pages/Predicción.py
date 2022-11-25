@@ -46,7 +46,7 @@ if sel is not '-':
     
     #id= 1jUUB_5C2WHuKD-x_dQgh5-1fD2lPyWoS
     @st.experimental_memo
-    def dowload_data():
+    def download_data():
         url = "https://drive.google.com/uc?id=1jUUB_5C2WHuKD-x_dQgh5-1fD2lPyWoS";
         output = 'weights.h5';
         gdown.download(url, output, quite=False);
