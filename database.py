@@ -2,7 +2,6 @@ from deta import Deta  # pip install deta
 from skimage.io import imread,imshow,imsave
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 import pandas as pd
 
 
@@ -13,6 +12,7 @@ deta = Deta(DETA_KEY)
 # This is how to create/connect a database
 db = deta.Base("MetadataPACS")
 dv = deta.Drive('DLO_prueba')
+dbc = deta.Base('Cred')
 
 # FUNCIONES DE LA BASE DE DATOS
 def insert_met(id, name, age, te, r, op, neu, rad):
@@ -41,7 +41,7 @@ def lst_nombres(): # Lista de Nombres
 
     lst_names = list(df['nombre'])
     lst_id = list(df['key'])
-    return lst_names, lst_id
+    return lst_names, lst_id, df
 
 def get_radiog(id): # Obtenemos la Imagen
     iml = get_image(id)
@@ -60,3 +60,16 @@ def get_radiog(id): # Obtenemos la Imagen
 
     im = np.array(glst)
     return im
+
+def get_pw(us): # Extraemos contraseña
+    res = dbc.fetch()
+    df = pd.DataFrame(res.items)
+
+    try:
+        df_us = df[df['usuario'] == us] 
+        pw = df_us['contra'].values[0]
+        name = df_us['nombre'].values[0]
+    except:
+        pw = -1
+        name = -1
+    return pw, name
