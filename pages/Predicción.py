@@ -62,7 +62,7 @@ if sel is not '-':
     im = Image.fromarray(np.uint8(im*255))
     gradcam = Image.fromarray(np.uint8(gradcam*255))
 
-    image_comparison(im,gradcam, label1 = 'Radiografía Original', label2 =  'Mapa de Calor de la Opacidad')
+    #image_comparison(im,gradcam, label1 = 'Radiografía Original', label2 =  'Mapa de Calor de la Opacidad')
 
 
-    #st.image(gradcam)
+    st.image(gradcam)
