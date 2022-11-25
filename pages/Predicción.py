@@ -74,7 +74,7 @@ if sel is not '-':
         gdown.download(url, output);
     download_data()
     
-   model_path = 'weights.h5'
+    model_path = 'weights.h5'
     pred, gradcam = cad.DLO_predict(im*255., model_path)
     
     st.markdown("""
