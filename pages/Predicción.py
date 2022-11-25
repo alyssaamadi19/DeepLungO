@@ -3,6 +3,8 @@ from streamlit_image_comparison import image_comparison
 import numpy as np
 from PIL import Image
 import gdown
+import sahi.predict
+import sahi.utils
 
 # Funciones en archivos .py fuera del folder de pages. Tendras que cambiarlo para tu compu
 import sys
