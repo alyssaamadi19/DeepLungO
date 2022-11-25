@@ -49,7 +49,7 @@ if sel is not '-':
     def download_data():
         url = "https://drive.google.com/uc?id=1jUUB_5C2WHuKD-x_dQgh5-1fD2lPyWoS";
         output = 'weights.h5';
-        gdown.download(url, output, quite=False);
+        gdown.download(url, output);
     download_data()
     
     model_path = 'weights.h5'
