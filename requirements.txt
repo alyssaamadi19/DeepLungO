@@ -10,3 +10,4 @@ streamlit==1.14.0
 streamlit_image_comparison
 tensorflow==2.10.0
 gdown
+torch
