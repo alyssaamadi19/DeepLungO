@@ -9,7 +9,7 @@ import gdown
 # Funciones en archivos .py fuera del folder de 'pages'. Salimos al dir Streamlit
 import sys
 import os
-path = os.getcwd()
+path = C:/Users/alyssa/OneDrive/Escritorio/DeepLungO/Streamlit
 sys.path.insert(1, path)  
 import CAD_DLOv1 as cad
 import database as D
