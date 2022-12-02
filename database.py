@@ -55,7 +55,7 @@ def lst_nombres(pdoc): # Lista de Nombres
 def lst_radiologos(): # Lista de Nombres
     res = db.fetch(dbc)
     df = pd.DataFrame(res.items)
-    display(df)
+    return df
 
 def get_radiog(id): # Obtenemos la Imagen
     iml = get_image(id)
