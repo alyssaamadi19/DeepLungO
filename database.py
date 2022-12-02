@@ -52,10 +52,25 @@ def lst_nombres(pdoc): # Lista de Nombres
     lst_id = list(df['key'])
     return lst_names, lst_id, df
 
-def lst_radiologos(): # Lista de Nombres
-    res = db.fetch(dbc)
+def lst_radiologos(us): # Lista de Nombres
+    res = dbc.fetch()
     df = pd.DataFrame(res.items)
-    return df
+    res2 = db.fetch()
+    df2 = pd.DataFrame(res.items)
+    
+    df_us = df[df['usuario'] == us] 
+    
+    if us=="RadioAC_002":
+        id_rad = df2[df2['id_neu']== "RadioAC_002"]    
+    
+    if us=="RadioJP_001":
+        id_rad='0'
+    
+    if us=="RadioJP_003":
+        id_rad='1'
+    
+    retunrn id_rad
+    
 
 def get_radiog(id): # Obtenemos la Imagen
     iml = get_image(id)
