@@ -101,7 +101,7 @@ with col3:
     
 col1, col2 = st.columns(2)
 with col1: 
-    st.image("david.jpeg")
+    st.image("david.png")
     st.markdown("Estudiante de ingeniería biomédica con enfoque al área de señales e imágenes e ingeniería clínica. Experiencia en la detección de patologías usando métodos de deep learning y machine learning.")
 with col2: 
     st.image("ximena.jpeg")
