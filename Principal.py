@@ -25,7 +25,7 @@ add_bg_from_local('doctor.png')
 
 
 
-st.markdown(unsafe_allow_html = True)
+#st.markdown(unsafe_allow_html = True)
 
 st.title("Deep Learning Opacity Web Service")
 st.sidebar.success("Select a page above.")
