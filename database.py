@@ -48,7 +48,7 @@ def lst_nombres(pdoc): # Lista de Nombres
         df = df[df['aprob'] == 'W']
     #display(df)
 
-    lst_names = list(df['nombre'])
+    lst_names = list(df['id_rad'])
     lst_id = list(df['key'])
     return lst_names, lst_id, df
 
