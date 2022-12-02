@@ -31,14 +31,29 @@ import database as D
 st.markdown("""
     # 🧿 Dashboard  - Radiología
     ### ¿Cuántos pacientes tienes?.""")
-    
 
-l,lid,df= D.lst_nombres(1)
-l.insert(0,'-')
+################################
+def lst_radiologos(sel): # Lista de Nombres
+    res = db.fetch(dbc)
+    df = pd.DataFrame(res.items)
+    display(df)
+    if sel == "RadioJQ_001": 
+        df = 'hola'
+    if sel == "RadioAC_002": # Int Radiologo
+        df ='chau'
+    if sel == "RadioJP_003": # Int Radiologo Rect
+        df = 'chuadsada'
+    display(df)
+
+
 sel = st.selectbox("Ingresa tu key",l)
+l,lid,df= D.lst_nombres(sel)
+l.insert(0,'-')
 
+
+
+#######################################
     
-# Extraemos index
 
 if sel == "RadioAC_002":
     rad= df[df['Radiólogo']] 
