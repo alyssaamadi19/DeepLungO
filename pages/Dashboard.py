@@ -35,18 +35,14 @@ st.markdown("""
 
 l,lid,df= D.lst_nombres(1)
 l.insert(0,'-')
-sel = st.selectbox('Encuentra a tu paciente en la base de datos del PACS y obten la probabilidad de diagnóstico de Opacidad Pulmonar' , l)
+sel = st.selectbox("Ingresa tu key",l)
 
     
 # Extraemos index
-d= df[df['nombre'] == sel].reset_index(drop = True)
+
+if key == "RadioAC_002"
+    rad= df[df['nombre'] == Radiólogo]
+    st.markdown(rad)
 
 
 
-st.markdown("""
-  # Paciente: {}
-  
-  """.format(sel))
-st.markdown(d)
-
-st.dataframe(d)
