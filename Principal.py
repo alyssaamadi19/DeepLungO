@@ -91,12 +91,22 @@ st.markdown("Somos alumnos de Ingeniería Biomédica de la Universidad Peruana C
 col1, col2, col3 = st.columns(3)
 with col1: 
     st.image("pierol.jpeg")
+    st.markdown("Estudiante de Ing Biomedica de de 9no ciclo apasionado por la investigación y desarrollo de nuevas tecnologías que mejores la salud. Tengo interés particular por el área del el Diagnóstico de Imágenes o señales por IA, Ing. Clínica e Ingeniería de Tejidos.")
+with col2: 
+    st.image("victor.jpeg")
+    st.markdown("Apasionado en las ramas de Ing. Clínica y Señales e Imágenes. Experiencia en desarrollo de un wearable prototipo para obtención de señales multiparamétricas e interés en procesamiento de señales de voz para personas que sufrieron laringectomía.")
+with col3: 
+    st.image("alyssa.jfif")
+    st.markdown("abc")
+    
+col1, col2 = st.columns(2)
+with col1: 
+    st.image("david.jpeg")
+    st.markdown("Estudiante de ingeniería biomédica con enfoque al área de señales e imágenes e ingeniería clínica. Experiencia en la detección de patologías usando métodos de deep learning y machine learning.")
 with col2: 
     st.image("ximena.jpeg")
-with col3: 
-    st.image("pierol.jpeg")
-    
-    
+    st.markdown("Estudiante de 8vo ciclo de la carrera de Ing. Biomédica, integrante del Laboratorio de Imágenes Médicas de la PUCP con interés en desarrollarse en el área de Imágenes y Señales Biomédicas. Experiencia trabajando con ultrasonido pulmonar.")
+
     
     
     
