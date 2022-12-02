@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_image_comparison import image_comparison
 import numpy as np
 from PIL import Image
+import gdown
 
 # Funciones en archivos .py fuera del folder de 'pages'. Salimos al dir Streamlit
 import sys
