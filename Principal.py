@@ -107,9 +107,11 @@ with col3:
 col1, col2 = st.columns(2)
 with col1: 
     st.image("david.png")
+    st.subheader("David Villaseca Pacheco")
     st.markdown("Estudiante de ingeniería biomédica con enfoque al área de señales e imágenes e ingeniería clínica. Experiencia en la detección de patologías usando métodos de deep learning y machine learning.")
 with col2: 
     st.image("ximena.jpeg")
+    st.subheader("Ximena Jamilet Montoya Calderón")
     st.markdown("Estudiante de 8vo ciclo de la carrera de Ing. Biomédica, integrante del Laboratorio de Imágenes Médicas de la PUCP con interés en desarrollarse en el área de Imágenes y Señales Biomédicas. Experiencia trabajando con ultrasonido pulmonar.")
 
     
