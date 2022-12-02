@@ -41,12 +41,17 @@ st.markdown("""
 """)
 
 
-#Row A
-st.markdown('### 1.')
+#Colummns
 col1, col2, col3 = st.columns(3)
-col1.metric("Reconocer la opacidad en imágenes de radiografía pulmonar a través de algoritmos de inteligencia artificial.", "0")
-col2.metric("Implementar una plataforma web enlazada a una base de datos para la visualización de resultados.", "0")
-col3.metric("Conectar el sistema del centro de salud a la plataforma web desarrollada.", "0")
+with col1: 
+    st.subheader("### 1.")
+    st.text("Reconocer la opacidad en imágenes de radiografía pulmonar a través de algoritmos de inteligencia artificial.")
+with col2: 
+    st.subheader("### 2.")
+    st.text("Implementar una plataforma web enlazada a una base de datos para la visualización de resultados.")
+with col3: 
+    st.subheader("3.")
+    st.text("Conectar el sistema del centro de salud a la plataforma web desarrollada.")
 
 
 
