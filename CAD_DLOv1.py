@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 import cv2
 from skimage.io import imread,imshow,imsave
-from PIL import Image
+from PIL import Image,ImageOps
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import pandas as pd
@@ -19,7 +19,6 @@ def resize_im(im, im_size):
 def impad(im): 
   # De forma automática hacemos el padding cuadrado sin conocer el tamaño de la imagen original
   s = im.shape
-  mx = max(s)
   mx_i = np.argmax(s)
 
   # Identificamos si alguna dimension es impar
@@ -77,51 +76,46 @@ def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None
   # For visualization purpose, we will also normalize the heatmap between 0 & 1
   heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
   return heatmap.numpy()
+
 # Realizar GRADCAM y superponer
-def create_gradcam(img, heatmap, f_size, val_pad, alpha=0.4):
-    # Load the original image
-    #img = tf.keras.preprocessing.image.load_img(img_path)
-    img = cv2.resize(img*255, (f_size[1], f_size[1]), interpolation = cv2.INTER_AREA) # Resize al tamaño final
+def generate_gradcam(img, heatmap, val_pad):
+    # Pprocesamos la imagen Sola
     img = Image.fromarray(np.uint8(img))
     img = tf.keras.preprocessing.image.img_to_array(img)
 
+    fs = img.shape[1]
 
-    # Rescale heatmap to a range 0-255
-    heatmap = np.uint8(255 * heatmap)
-
-    # Use jet colormap to colorize heatmap
-    jet = cm.get_cmap("jet")
-
-    # Use RGB values of the colormap
-    jet_colors = jet(np.arange(256))[:, :3]
+    # Procesamos el mapa solo
+    heatmap = np.uint8(255 * heatmap)  # Rescale heatmap to a range 0-255
+    heatmap = np.where(heatmap>128, heatmap, 0)
+    jet = cm.get_cmap("jet") # Use jet colormap to colorize heatmap
+    jet_colors = jet(np.arange(256))[:, :3] # Use RGB values of the colormap
     jet_heatmap = jet_colors[heatmap]
+    jet_heatmap = tf.keras.preprocessing.image.array_to_img(jet_heatmap) # Create an image with RGB colorized heatmap
+    jet_heatmap = jet_heatmap.resize((fs,fs))
+    jet_heatmap = jet_heatmap.crop((0,val_pad,fs,fs - val_pad)) # Crop the image, take out padding
+    #jet_heatmap.putalpha(int(alpha*255)) #Cambia el valor de transparencia
 
-    # Create an image with RGB colorized heatmap
-    jet_heatmap = tf.keras.preprocessing.image.array_to_img(jet_heatmap)
-    jet_heatmap = jet_heatmap.resize((img.shape[1], img.shape[0]))
+    # Procesamos el mapa y la imagen
     jet_heatmap = tf.keras.preprocessing.image.img_to_array(jet_heatmap)
-
-    superimposed_img = jet_heatmap * alpha + img
+    superimposed_img = jet_heatmap + img
     superimposed_img = tf.keras.preprocessing.image.array_to_img(superimposed_img)
-    superimposed_img = np.array(superimposed_img.crop((0,val_pad,f_size[1],f_size[1]-val_pad)))
+    jet_heatmap = tf.keras.preprocessing.image.array_to_img(jet_heatmap)
 
-    return superimposed_img
-
+    return jet_heatmap, superimposed_img
 
 ################# FUNCIONES CORE ######################
 
 # PREPROCESAMIENTO
 def prepros(im):
-    orig_size = im.shape
     imsize = 256
     im,val_pad = impad(im) # Padding para que la imagen sea cuadrada
     im = cv2.resize(im, (imsize, imsize), interpolation = cv2.INTER_AREA) # Resize al tamaño final
     im = im/np.amax(im) # Re-normalizamos
-    img = im # Guardamos imagen original
     im = im.reshape((1,) + im.shape) # Agregamos una dimensión para la red
-    return im, img, orig_size, val_pad
+    return im, val_pad
 
-def Model_predict(model_path, im, img, orig_size, val_pad):
+def Model_predict(model_path, im, img_org, val_pad):
   # Predicción
   model = tf.keras.applications.Xception( #Creamos el modelo
     include_top=True, 
@@ -133,26 +127,28 @@ def Model_predict(model_path, im, img, orig_size, val_pad):
     classifier_activation="sigmoid")
   model.load_weights(model_path) #Cargamos los pesos
   pred = model.predict(im, verbose = 0)
-  pred = np.round(float(pred),3)*100
+  pred = int(np.round(float(pred),2)*100)
 
   #Explicación
   model.layers[-1].activation = None #Retiramos la calsificaión(NN)
   # Ya que usamos el feature map final, truncamos el modelo en su última capa
   last_conv_layer_name = 'block14_sepconv2_act' # Nombre depende de cada red, este solo aplica para Xception
   heatmap = make_gradcam_heatmap(im, model, last_conv_layer_name)
-  gradcam = create_gradcam(img, heatmap, orig_size, val_pad)
-
-  return pred, gradcam
+  gc,spi = generate_gradcam(img_org, heatmap, val_pad)
+  return pred, gc,spi
 
 ################# FUNCIÓN MAIN ######################
 
-def DLO_predict(im, mname):
+def DLO_predict(img_org, mname):
     # Preprocesamiento
-    im, img, orig_size, val_pad = prepros(im)
+    im, val_pad = prepros(img_org)
     # Predicción & Explicación
-    diag_prob, gradcam = Model_predict(mname, im, img, orig_size, val_pad)
+    diag_prob, gradcam, spi = Model_predict(mname, im, img_org, val_pad)
 
-    return diag_prob, gradcam
+    return diag_prob, gradcam, spi
+
+
+    
 
 
     
