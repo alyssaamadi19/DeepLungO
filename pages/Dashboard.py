@@ -42,14 +42,13 @@ sel = st.selectbox("Ingresa tu key",l)
 display(df)
 display(df2)
 
-    if us=="RadioAC_002":
-        id_rad = df2[df2['id_neu']== "RadioAC_002"]    
+if us=="RadioAC_002":
+    id_rad = df2[df2['id_neu']== "RadioAC_002"]    
+if us=="RadioJP_001":
+    id_rad='0'
     
-    if us=="RadioJP_001":
-        id_rad='0'
-    
-    if us=="RadioJP_003":
-        id_rad='1'
+if us=="RadioJP_003":
+    id_rad='1'
 
 #######################################
     
