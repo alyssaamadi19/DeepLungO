@@ -37,7 +37,7 @@ st.markdown("""
         
 
 lst_names, lst_id, df, df2= D.lst_radiologos()
-l.insert(0,'-')
+lst_names.insert(0,'-')
 sel = st.selectbox("Ingresa tu key",l)
 display(df)
 display(df2)
