@@ -3,9 +3,7 @@ import cv2
 import base64
 
 
-st.set_page_config(
-    page_title = "Multipage App",
-)
+st.set_page_config(layout='wide', initial_sidebar_state='expanded', page_title = "DeepLungOp",)
 
 
 @st.experimental_memo
