@@ -4,6 +4,8 @@ from streamlit_extras.switch_page_button import switch_page
 import numpy as np
 from PIL import Image, ImageOps
 import time
+import gdown
+
 
 page_bg = """
 <style>
