@@ -32,7 +32,7 @@ background-position: center;
 
 st.markdown(page_bg_img, unsafe_allow_html = True)
 
-st.title("Deep Learning Opacity Web Service')
+st.title("Deep Learning Opacity Web Service")
 st.sidebar.success("Select a page above.")
 
 st.markdown("""
