@@ -14,7 +14,7 @@ import database as D
 
 
 st.markdown("""
-    # 👨‍⚕️ Resultados - Neumólogía
+    # 👨‍⚕️ Resultados - Neumología
     ### Los resultados son aprobados por el Médico Radiólogo correspondiente, en apoyo con nuestra IA.
     ---
     ## Sírvase a encontrar a su paciente:
