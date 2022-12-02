@@ -90,7 +90,7 @@ st.markdown("Somos alumnos de Ingeniería Biomédica de la Universidad Peruana C
 #Colummns
 col1, col2, col3 = st.columns(3)
 with col1: 
-    st.image("pierol.jpeg)
+    st.image("pierol.jpeg")
 with col2: 
     st.image("ximena.jpeg")
 with col3: 
