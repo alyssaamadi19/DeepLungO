@@ -38,18 +38,19 @@ st.markdown("""
 
 lst_names, lst_id, df, df2= D.lst_radiologos()
 lst_names.insert(0,'-')
-sel = st.selectbox("Ingresa tu key",lst_names)
+sel = st.selectbox("Ingresa tu id",lst_names)
 st.dataframe(df)
 st.dataframe(df2)
 
-if us=="RadioAC_002":
-    id_rad = df2[df2['id_neu']== "RadioAC_002"]    
-if us=="RadioJP_001":
+if sel=="RadioAC_002":
+    id_rad = df2[df2['id_neu']== "RadioAC_002"]   
+    
+if sel=="RadioJP_001":
     id_rad='0'
     
-if us=="RadioJP_003":
+if sel=="RadioJP_003":
     id_rad='1'
-
+st.mardown("id_rad")
 #######################################
     
 
