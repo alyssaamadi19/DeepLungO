@@ -16,7 +16,7 @@ img = get_img_as_base64("doctor.png")
 page_bg_img = """
 <style>
 [data-testid = "stAppViewContainer"]{{
-background-image: url("data:image/png;base64,{img}");
+background-image: url("https://img.freepik.com/fotos-premium/doctor-mirando-pelicula-radiografia-torax-hospital_488220-9434.jpg?w=2000");
 background-size: cover;
 }}
 
