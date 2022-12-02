@@ -30,28 +30,20 @@ import database as D
 
 st.markdown("""
     # 🧿 Dashboard  - Radiología
-    ### ¿Cuántos pacientes tienes?.""")
+    ### ¿Cuántos pacientes tienes?""")
 
 ################################
-def lst_radiologos(): # Lista de Nombres
-    res = db.fetch(dbc)
-    df = pd.DataFrame(res.items)
-    display(df)
-    
+
+        
 
 df= D.lst_radiologos()
 l.insert(0,'-')
 sel = st.selectbox("Ingresa tu key",l)
 
-
-
+if sel
 
 #######################################
     
-
-if sel == "RadioAC_002":
-    rad= df[df['Radiólogo']] 
-    st.markdown(rad)
 
 
 
