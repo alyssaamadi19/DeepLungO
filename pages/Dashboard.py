@@ -50,7 +50,7 @@ if sel=="RadioJP_001":
     
 if sel=="RadioJP_003":
     id_rad='1'
-st.mardown("id_rad")
+st.markdown("id_rad")
 #######################################
     
 
