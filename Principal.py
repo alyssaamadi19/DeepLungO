@@ -12,7 +12,7 @@ img = get_img_as_base64("doctor.png")
 page_bg_img = f"""
 <style>
 [data-testid = "stAppViewContainer"]{{
-background-image: url("https://img.freepik.com/free-photo/abstract-orange-paint-background-acrylic-texture-with-marble-pattern_1258-90489.jpg?w=2000");
+background-image: url("data:image/png;base64,{img}");
 background-size: cover;
 }}
 
