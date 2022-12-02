@@ -41,4 +41,13 @@ st.markdown("""
 """)
 
 
+#Row A
+st.markdown('### 1.')
+col1, col2, col3 = st.columns(3)
+col1.metric("Reconocer la opacidad en imágenes de radiografía pulmonar a través de algoritmos de inteligencia artificial.")
+col2.metric("Implementar una plataforma web enlazada a una base de datos para la visualización de resultados.")
+col3.metric("Conectar el sistema del centro de salud a la plataforma web desarrollada.")
+
+
+
 #st.image(imread('./imgs/cadex.jpg'), channels = 'RGB')
