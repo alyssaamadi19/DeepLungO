@@ -58,11 +58,11 @@ with col1:
     st.markdown("Reconocer la opacidad en imágenes de radiografía pulmonar a través de algoritmos de inteligencia artificial.")
 with col2: 
     st.subheader(" 2.")
-    st.markdown("- Implementar una plataforma web enlazada a una base de datos para la visualización de resultados.")
+    st.markdown("Implementar una plataforma web enlazada a una base de datos para la visualización de resultados.")
 
 with col3: 
     st.subheader(" 3. ")
-    st.markdown("- Conectar el sistema del centro de salud a la plataforma web desarrollada.")
+    st.markdown("Conectar el sistema del centro de salud a la plataforma web desarrollada.")
 
 
 st.markdown('''
@@ -74,4 +74,31 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 
 
+#Colummns
+col1, col2, col3 = st.columns(3)
+with col1: 
+    st.subheader(" ")
+with col2: 
+    st.subheader(" Sobre nosotros ")
 
+with col3: 
+    st.subheader(" ")
+    
+st.markdown("Somos alumnos de Ingeniería Biomédica de la Universidad Peruana Cayetano Heredia y la Pontifica Universidad Católica del Perú, interesados en la rama de Señales e Imágenes Médicas.)
+
+
+
+#Colummns
+col1, col2, col3 = st.columns(3)
+with col1: 
+    st.image("pierol.jpeg)
+with col2: 
+    st.image("ximena.jpeg")
+with col3: 
+    st.image("pierol.jpeg")
+    
+    
+    
+    
+    
+    
