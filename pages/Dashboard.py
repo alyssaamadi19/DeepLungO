@@ -40,8 +40,8 @@ sel = st.selectbox("Ingresa tu key",l)
     
 # Extraemos index
 
-if df[df['key'] == "RadioAC_002"]:
-    rad= df[df['nombre'] == Radiólogo]
+if sel == "RadioAC_002":
+    rad= df[df['Radiólogo']] 
     st.markdown(rad)
 
 
