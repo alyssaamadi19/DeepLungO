@@ -39,8 +39,8 @@ st.markdown("""
 lst_names, lst_id, df, df2= D.lst_radiologos()
 lst_names.insert(0,'-')
 sel = st.selectbox("Ingresa tu key",lst_names)
-display(df)
-display(df2)
+st.dataframe(df)
+st.dataframe(df2)
 
 if us=="RadioAC_002":
     id_rad = df2[df2['id_neu']== "RadioAC_002"]    
