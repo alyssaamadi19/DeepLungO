@@ -62,11 +62,11 @@ if sel is not '-':
     @st.experimental_memo
     def download_data():
         url = "https://drive.google.com/uc?id=1PLgNw1tK9MobVEa8nTNZ9-RnWpW3Y1vo";
-        output = 'weights.h5';
+        output = 'weightsXception.h5';
         gdown.download(url, output);
     download_data()
     
-    model_path = 'weights.h5'
+    model_path = 'weightsXception.h5'
     pred, gradcam, spi = cad.DLO_predict(im*255., model_path)
     
     st.markdown("""
