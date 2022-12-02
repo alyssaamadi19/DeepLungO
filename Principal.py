@@ -9,7 +9,7 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 img = get_img_as_base64("doctor.png")
 
-page_bf_img = f"""
+page_bg_img = f"""
 <style>
 [data-testid = "stAppViewContainer"]{
 background-image: url("https://img.freepik.com/free-photo/abstract-orange-paint-background-acrylic-texture-with-marble-pattern_1258-90489.jpg?w=2000");
@@ -30,7 +30,7 @@ st.set_page_config(
 )
 
 
-st.markdown(page_bf_img, unsafe_allow_html = True)
+st.markdown(page_bg_img, unsafe_allow_html = True)
 
 st.title('Deep Learning Opacity Web Service')
 st.sidebar.success("Select a page above.")
