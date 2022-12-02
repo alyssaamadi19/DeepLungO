@@ -33,22 +33,16 @@ st.markdown("""
     ### ¿Cuántos pacientes tienes?.""")
 
 ################################
-def lst_radiologos(sel): # Lista de Nombres
+def lst_radiologos(): # Lista de Nombres
     res = db.fetch(dbc)
     df = pd.DataFrame(res.items)
     display(df)
-    if sel == "RadioJQ_001": 
-        df = 'hola'
-    if sel == "RadioAC_002": # Int Radiologo
-        df ='chau'
-    if sel == "RadioJP_003": # Int Radiologo Rect
-        df = 'chuadsada'
-    display(df)
+    
 
-
-sel = st.selectbox("Ingresa tu key",l)
-l,lid,df= D.lst_nombres(sel)
+l,lid,df= D.lst_radiologos()
 l.insert(0,'-')
+sel = st.selectbox("Ingresa tu key",l)
+
 
 
 
