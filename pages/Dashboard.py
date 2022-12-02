@@ -39,7 +39,7 @@ def lst_radiologos(): # Lista de Nombres
     display(df)
     
 
-l,lid,df= D.lst_radiologos()
+df= D.lst_radiologos()
 l.insert(0,'-')
 sel = st.selectbox("Ingresa tu key",l)
 
