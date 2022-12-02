@@ -48,12 +48,9 @@ def lst_nombres(pdoc): # Lista de Nombres
         df = df[df['aprob'] == 'W']
     #display(df)
 
-    lst_names = list(df['id_rad'])
+    lst_names = list(df['nombre'])
     lst_id = list(df['key'])
     return lst_names, lst_id, df
-
-
-    
 
 def get_radiog(id): # Obtenemos la Imagen
     iml = get_image(id)
