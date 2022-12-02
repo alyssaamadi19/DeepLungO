@@ -2,6 +2,12 @@ import streamlit as st
 import cv2
 import base64
 
+
+st.set_page_config(
+    page_title = "Multipage App",
+)
+
+
 @st.experimental_memo
 def get_img_as_base64(file):
     with open(file, "rb") as f:
@@ -24,10 +30,6 @@ background-position: center;
 """
 
 
-
-st.set_page_config(
-    page_title = "Multipage App",
-)
 
 
 st.markdown(page_bg_img, unsafe_allow_html = True)
