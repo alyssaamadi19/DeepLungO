@@ -46,10 +46,23 @@ col1, col2, col3 = st.columns(3)
 with col1: 
     st.subheader(" ")
 with col2: 
-    st.subheader("Objetivos")
+    st.subheader(" Objetivos ")
+
 with col3: 
     st.subheader(" ")
+
+
+col1, col2, col3 = st.columns(3)
+with col1: 
+    st.subheader(" 1.")
     st.markdown("Reconocer la opacidad en imágenes de radiografía pulmonar a través de algoritmos de inteligencia artificial.")
+with col2: 
+    st.subheader(" 2.")
+    st.markdown("- Implementar una plataforma web enlazada a una base de datos para la visualización de resultados.")
+
+with col3: 
+    st.subheader(" 3. ")
+    st.markdown("- Conectar el sistema del centro de salud a la plataforma web desarrollada.")
 
 
 st.markdown('''
@@ -60,9 +73,5 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
-st.markdown("- Reconocer la opacidad en imágenes de radiografía pulmonar a través de algoritmos de inteligencia artificial.")
-st.markdown("- Implementar una plataforma web enlazada a una base de datos para la visualización de resultados.")
-st.markdown("- Conectar el sistema del centro de salud a la plataforma web desarrollada.")
 
 
-#st.image(imread('./imgs/cadex.jpg'), channels = 'RGB')
