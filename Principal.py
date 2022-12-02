@@ -48,7 +48,9 @@ with col1:
 with col2: 
     st.subheader("Objetivos")
 with col3: 
-    st.subheader(" 3.")
+    st.subheader(" ")
+    st.markdown("Reconocer la opacidad en imágenes de radiografía pulmonar a través de algoritmos de inteligencia artificial.")
+
 
 st.markdown('''
 <style>
