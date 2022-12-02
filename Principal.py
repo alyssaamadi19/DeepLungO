@@ -9,7 +9,7 @@ def get_img_as_base64(file):
     return base64.b64encode(data).decode()
 img = get_img_as_base64("doctor.png")
 
-page_bg_img = f"""
+page_bg_img = """
 <style>
 [data-testid = "stAppViewContainer"]{{
 background-image: url("data:image/png;base64,{img}");
