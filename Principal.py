@@ -93,13 +93,16 @@ st.markdown("Somos alumnos de Ingeniería Biomédica de la Universidad Peruana C
 col1, col2, col3 = st.columns(3)
 with col1: 
     st.image("pierol.jpeg")
+    st.subheader("Pierol Salvador Quispe Sánchez")
     st.markdown("Estudiante de Ing Biomedica de de 9no ciclo apasionado por la investigación y desarrollo de nuevas tecnologías que mejores la salud. Tengo interés particular por el área del el Diagnóstico de Imágenes o señales por IA, Ing. Clínica e Ingeniería de Tejidos.")
 with col2: 
     st.image("victor.jpeg")
+    st.subheader("Victor Giancarlo Sosa Rocha")
     st.markdown("Apasionado en las ramas de Ing. Clínica y Señales e Imágenes. Experiencia en desarrollo de un wearable prototipo para obtención de señales multiparamétricas e interés en procesamiento de señales de voz para personas que sufrieron laringectomía.")
 with col3: 
     st.image("alyssa.jfif")
-    st.markdown("abc")
+    st.subheader("Alyssa Nicole Maguiña Díaz")
+    st.markdown("Estudia de Ingeniería Biomédica integrante de Laboratorio de Biomecánica y Robótica Aplicada con interés en la neurociencia relacionada con el aprendizaje motriz y procesamiento de señales de EEG e imágenes motoras para BCI. ")
     
 col1, col2 = st.columns(2)
 with col1: 
