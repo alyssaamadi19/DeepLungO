@@ -25,6 +25,19 @@ add_bg_from_local('doctor.png')
 
 
 
+st.markdown(
+    """
+<style>
+.sidebar .sidebar-content {
+    background-image: linear-gradient(#2e7bcf,#2e7bcf);
+    color: white;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
+
 
 st.title("Deep Learning Opacity Web Service")
 st.sidebar.success("Select a page above.")
