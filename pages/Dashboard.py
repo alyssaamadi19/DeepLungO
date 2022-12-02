@@ -30,8 +30,8 @@ import database as D
 
 st.markdown("""
     # 🧿 Dashboard  - Radiología
-    ### ¿Cuántos pacientes tienes?.
-    ---
+    ### ¿Cuántos pacientes tienes?.""")
+    
 
 l,lid,df= D.lst_nombres(1)
 l.insert(0,'-')
@@ -45,8 +45,8 @@ d= df[df['nombre'] == sel].reset_index(drop = True)
 
 st.markdown("""
   # Paciente: {}
-  ### ID: {}
-  """.format(sel,id))
-
+  
+  """.format(sel))
+st.markdown(d)
 
 st.dataframe(d)
