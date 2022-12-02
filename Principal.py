@@ -39,8 +39,8 @@ st.markdown("""
     ## ¿Qué es DLO?
     Somos una plataforma Web que predice la probabiliad de Opacidad Pulmonar en una Radiografía de Pecho, apoyando al diagnóstico de los médicos radiólogos
 """)
-st.markdow("")
-st.markdow("")
+st.markdown("")
+st.markdown("")
 
 #Colummns
 col1, col2, col3 = st.columns(3)
@@ -74,6 +74,7 @@ st.markdown('''
 </style>
 ''', unsafe_allow_html=True)
 
+st.markdown("")
 
 #Colummns
 col1, col2, col3 = st.columns(3)
