@@ -58,7 +58,8 @@ def lst_radiologos(us): # Lista de Nombres
     res2 = db.fetch()
     df2 = pd.DataFrame(res.items)
     
-    df_us = df[df['usuario'] == us] 
+    lst_names = list(df['nombre'])
+    lst_id = list(df['key']) 
     
     if us=="RadioAC_002":
         id_rad = df2[df2['id_neu']== "RadioAC_002"]    
@@ -69,7 +70,7 @@ def lst_radiologos(us): # Lista de Nombres
     if us=="RadioJP_003":
         id_rad='1'
     
-    retunrn id_rad
+    return lst_names, lst_id, df, id_rad
     
 
 def get_radiog(id): # Obtenemos la Imagen
